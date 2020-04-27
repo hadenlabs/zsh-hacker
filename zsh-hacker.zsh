@@ -37,3 +37,6 @@ function cross::os {
 }
 
 cross::os
+
+# shellcheck source=/dev/null
+source "${HACKER_SOURCE_PATH}"/docker.zsh
