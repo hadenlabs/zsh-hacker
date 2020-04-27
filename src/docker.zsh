@@ -11,6 +11,10 @@ function sqlmap {
 
 # urlscan
 function urlscan {
+    if [ -z "${URLSCAN_API_KEY}" ]; then
+        message_warning "URLSCAN_API_KEY is neccesary"
+        return 0
+    fi
     mkdir -p ~/.urlscan
     docker run --rm -i \
            -v ~/.urlscan:/root/.urlscan heywoodlh/urlscan-py:latest "${@}" --api "${URLSCAN_API_KEY}"
