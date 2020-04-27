@@ -11,3 +11,5 @@ function docker::install {
     brew cask install docker
     message_success "Installed docker"
 }
+
+if ! type -p docker > /dev/null; then docker::install; fi
