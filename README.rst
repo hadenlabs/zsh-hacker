@@ -25,6 +25,7 @@ Dependencies
 .. code-block:: bash
 
     https://github.com/mafredri/zsh-async
+    https://github.com/luismayta/zsh-docker
     https://github.com/luismayta/zsh-functions
 
 Installation
