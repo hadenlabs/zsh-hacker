@@ -26,6 +26,8 @@ Dependencies
 
     https://github.com/mafredri/zsh-async
     https://github.com/luismayta/zsh-docker
+    https://github.com/luismayta/zsh-pyenv
+    https://github.com/luismayta/zsh-pipenv
     https://github.com/luismayta/zsh-functions
 
 Installation
