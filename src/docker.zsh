@@ -19,3 +19,7 @@ function urlscan {
     docker run --rm -i \
            -v ~/.urlscan:/root/.urlscan heywoodlh/urlscan-py:latest "${@}" --api "${URLSCAN_API_KEY}"
 }
+
+function nmap {
+    docker run --rm -i weshigbee/nmap "${@}"
+}
