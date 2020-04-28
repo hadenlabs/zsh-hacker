@@ -43,3 +43,12 @@ source "${HACKER_SOURCE_PATH}"/docker.zsh
 
 # shellcheck source=/dev/null
 source "${HACKER_SOURCE_PATH}"/ip.zsh
+
+# shellcheck source=/dev/null
+source "${HACKER_SOURCE_PATH}"/domain.zsh
+
+# shellcheck source=/dev/null
+source "${HACKER_SOURCE_PATH}"/file.zsh
+
+# shellcheck source=/dev/null
+source "${HACKER_SOURCE_PATH}"/urls.zsh
