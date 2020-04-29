@@ -1,6 +1,20 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 
+function hacker::urlscan::validate {
+    if [ -z "${URLSCAN_API_KEY}" ]; then
+        message_warning "URLSCAN_API_KEY is neccesary"
+        return 0
+    fi
+}
+
+function hacker::wpvulndb::validate {
+    if [ -z "${WPVULNDB_API_TOKEN}" ]; then
+        message_warning "WPVULNDB_API_TOKEN is neccesary"
+        return 0
+    fi
+}
+
 # Takes in $1 the python file to execute with sqlmap
 function sqlmap {
     mkdir -p ~/.sqlmap
@@ -11,10 +25,7 @@ function sqlmap {
 
 # urlscan
 function urlscan {
-    if [ -z "${URLSCAN_API_KEY}" ]; then
-        message_warning "URLSCAN_API_KEY is neccesary"
-        return 0
-    fi
+    hacker::urlscan::validate
     mkdir -p ~/.urlscan
     docker run --rm -i \
            -v ~/.urlscan:/root/.urlscan heywoodlh/urlscan-py:latest "${@}" --api "${URLSCAN_API_KEY}"
@@ -22,4 +33,9 @@ function urlscan {
 
 function nmap {
     docker run --rm -i weshigbee/nmap "${@}"
+}
+
+function wpscan {
+    hacker::wpvulndb::validate
+    docker run --rm -i wpscanteam/wpscan --url "${@}" --api-token "${WPVULNDB_API_TOKEN}"
 }
