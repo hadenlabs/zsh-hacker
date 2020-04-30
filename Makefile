@@ -36,7 +36,7 @@ SOURCE_DIR=$(ROOT_DIR)/
 PROVISION_DIR:=$(ROOT_DIR)/provision
 FILE_README:=$(ROOT_DIR)/README.rst
 KEYBASE_VOLUME_PATH ?= /Keybase
-KEYBASE_PATH ?= ${KEYBASE_VOLUME_PATH}/team/${TEAM}/projects/${PROJECT}
+KEYBASE_PATH ?= ${KEYBASE_VOLUME_PATH}/${TEAM}/${AWS_VAULT}/projects/${PROJECT}
 
 PATH_DOCKER_COMPOSE:=docker-compose.yml -f provision/docker-compose
 
