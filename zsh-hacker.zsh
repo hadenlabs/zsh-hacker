@@ -52,3 +52,6 @@ source "${HACKER_SOURCE_PATH}"/file.zsh
 
 # shellcheck source=/dev/null
 source "${HACKER_SOURCE_PATH}"/urls.zsh
+
+# shellcheck source=/dev/null
+source "${HACKER_SOURCE_PATH}"/merge.zsh
