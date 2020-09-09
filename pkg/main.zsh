@@ -3,17 +3,13 @@
 
 function hacker::pkg::main::factory {
     # shellcheck source=/dev/null
-    source "${ZSH_HACKER_SRC_PATH}"/pkg/base.zsh
-    case "${OSTYPE}" in
-    darwin*)
-        # shellcheck source=/dev/null
-        source "${ZSH_HACKER_SRC_PATH}"/pkg/osx.zsh
-        ;;
-    linux*)
-        # shellcheck source=/dev/null
-        source "${ZSH_HACKER_SRC_PATH}"/pkg/linux.zsh
-      ;;
-    esac
+    source "${ZSH_HACKER_SRC_PATH}"/pkg/tool/main.zsh
+
+    # shellcheck source=/dev/null
+    source "${ZSH_HACKER_SRC_PATH}"/pkg/research/main.zsh
+
+    # shellcheck source=/dev/null
+    source "${ZSH_HACKER_SRC_PATH}"/pkg/net/main.zsh
 }
 
 hacker::pkg::main::factory
