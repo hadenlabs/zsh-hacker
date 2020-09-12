@@ -20,18 +20,18 @@ export = {
     const path: string[] = data.name.split('/')
 
     data.packageName = path.pop()
-    data.basePath = '../../package/' + path.join('/')
+    data.basePath = '../../pkg/' + path.join('/')
 
     const actions: any[] = [
       {
         type: 'add',
-        path: '{{basePath}}/{{lowerCase packageName}}/{{lowerCase packageName}}.zsh',
+        path: '{{basePath}}/{{hyphenate packageName}}/{{hyphenate packageName}}.zsh',
         templateFile: './package/base.zsh.hbs',
         abortOnFail: true,
       },
       {
         type: 'add',
-        path: '{{basePath}}/{{lowerCase packageName}}/{{lowerCase packageName}}.zsh',
+        path: '{{basePath}}/{{hyphenate packageName}}/{{hyphenate packageName}}.zsh',
         templateFile: './package/main.zsh.hbs',
         abortOnFail: true,
       },
