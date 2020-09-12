@@ -11,7 +11,7 @@
   "scripts": {
     "prebuild": "yarn run clean",
     "build": "./node_modules/.bin/tsc -p",
-    "build:tool": "yarn run compile ./tools/",
+    "build:tool": "yarn run build ./tools/",
     "clean": "rimraf -rf dist",
     "clean:cache": "yarn clean ./node_modules/.cache",
     "clean:build": "yarn clean dist .next out .serverless_nextjs",
