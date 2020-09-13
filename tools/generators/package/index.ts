@@ -1,42 +1,56 @@
+import * as path from 'path'
+
+import { PlopGenerator } from 'plop'
 import { folderExists } from '../utils'
 
-export = {
-  description: 'Add a package',
+export enum PackagePromptNames {
+  'PackageName' = 'PackageName',
+}
+
+const packagesPath = path.join(__dirname, '../../../pkg')
+const containerPath = `${packagesPath}/{{lowerCase ${PackagePromptNames.PackageName}}}`
+
+export const packageGenerator: PlopGenerator = {
+  description: 'add an package',
   prompts: [
     {
       type: 'input',
-      name: 'name',
+      name: PackagePromptNames.PackageName,
       message: 'What should it be called?',
-      validate: (value: string) => {
-        if (!value || value.length === 0) {
-          return 'name is required'
+      default: 'tool',
+      validate: (value) => {
+        if (/.+/.test(value)) {
+          return folderExists(value) ? 'A package with this name already exists' : true
         }
 
-        return folderExists(value) ? `folder already exists (${value})` : true
+        return 'The name is required'
       },
     },
   ],
-  actions: (data: any) => {
-    const path: string[] = data.name.split('/')
-
-    data.packageName = path.pop()
-    data.basePath = '../../pkg/' + path.join('/')
-
-    const actions: any[] = [
-      {
-        type: 'add',
-        path: '{{basePath}}/{{hyphenate packageName}}/{{hyphenate packageName}}.zsh',
-        templateFile: './package/base.zsh.hbs',
-        abortOnFail: true,
-      },
-      {
-        type: 'add',
-        path: '{{basePath}}/{{hyphenate packageName}}/{{hyphenate packageName}}.zsh',
-        templateFile: './package/main.zsh.hbs',
-        abortOnFail: true,
-      },
-    ]
-
-    return actions
-  },
+  actions: [
+    {
+      type: 'add',
+      templateFile: './package/base.zsh.hbs',
+      path: `${containerPath}/base.zsh`,
+      abortOnFail: true,
+    },
+    {
+      type: 'add',
+      templateFile: './package/main.zsh.hbs',
+      path: `${containerPath}/main.zsh`,
+      abortOnFail: true,
+    },
+    {
+      type: 'add',
+      templateFile: './package/linux.zsh.hbs',
+      path: `${containerPath}/linux.zsh`,
+      abortOnFail: true,
+    },
+    {
+      type: 'add',
+      templateFile: './package/osx.zsh.hbs',
+      path: `${containerPath}/osx.zsh`,
+      abortOnFail: true,
+    },
+  ],
 }
