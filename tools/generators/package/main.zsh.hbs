@@ -1,19 +1,19 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 
-function hacker::package::main::{{hyphenate packageName}}::factory {
+function hacker::pkg::{{lowerCase packageName}}::factory {
     # shellcheck source=/dev/null
-    source "${ZSH_HACKER_SRC_PATH}"/package/{{hyphenate packageName}}/base.zsh
+    source "${ZSH_HACKER_SRC_PATH}"/pkg/{{lowerCase packageName}}/base.zsh
     case "${OSTYPE}" in
     darwin*)
         # shellcheck source=/dev/null
-        source "${ZSH_HACKER_SRC_PATH}"/package/{{hyphenate packageName}}/osx.zsh
+        source "${ZSH_HACKER_SRC_PATH}"/pkg/{{lowerCase packageName}}/osx.zsh
         ;;
     linux*)
         # shellcheck source=/dev/null
-        source "${ZSH_HACKER_SRC_PATH}"/package/{{hyphenate packageName}}/linux.zsh
+        source "${ZSH_HACKER_SRC_PATH}"/pkg/{{lowerCase packageName}}/linux.zsh
       ;;
     esac
 }
 
-hacker::package::main::{{hyphenate packageName}}::factory
+hacker::pkg::main::{{lowerCase packageName}}::factory
