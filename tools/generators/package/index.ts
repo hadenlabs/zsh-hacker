@@ -7,8 +7,8 @@ export enum PackagePromptNames {
   'PackageName' = 'PackageName',
 }
 
-const packagesPath = path.join(__dirname, '../../../pkg')
-const containerPath = `${packagesPath}/{{lowerCase ${PackagePromptNames.PackageName}}}`
+const packagePath = path.join(__dirname, '../../../pkg')
+const containerPath = `${packagePath}/{{lowerCase ${PackagePromptNames.PackageName}}}`
 
 export const packageGenerator: PlopGenerator = {
   description: 'add an package',
@@ -50,6 +50,12 @@ export const packageGenerator: PlopGenerator = {
       type: 'add',
       templateFile: './package/osx.zsh.hbs',
       path: `${containerPath}/osx.zsh`,
+      abortOnFail: true,
+    },
+    {
+      type: 'append',
+      templateFile: './package/main.append.hbs',
+      path: `${packagePath}/main.zsh`,
       abortOnFail: true,
     },
   ],
