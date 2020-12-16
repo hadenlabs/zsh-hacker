@@ -6,7 +6,7 @@ If you have any problems with starting zsh-hacker, please report it on GitHub: h
 
 
 Who is behind zsh-hacker
------------------------
+------------------------
 
 **Organisation**:
 
