@@ -3,6 +3,7 @@
 #
 
 OS := $(shell uname)
+
 .PHONY: help
 .DEFAULT_GOAL := help
 
@@ -28,7 +29,7 @@ PROJECT_PORT := 3000
 
 PYTHON_VERSION=3.8.0
 NODE_VERSION=12.14.1
-TERRAFORM_VERSION=0.13.1
+TERRAFORM_VERSION=0.14.2
 PYENV_NAME="${PROJECT}"
 
 # Configuration.
@@ -78,10 +79,10 @@ setup:
 	@echo "=====> install packages..."
 	make python.setup
 	make python.precommit
-	make yarn.setup
 	@cp -rf provision/git/hooks/prepare-commit-msg .git/hooks/
 	@[ -e ".env" ] || cp -rf .env.example .env
 	make keybase.setup
+	make yarn.setup
 	@echo ${MESSAGE_HAPPY}
 
 environment:
