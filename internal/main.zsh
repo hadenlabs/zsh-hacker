@@ -19,3 +19,4 @@ function hacker::internal::main::factory {
 hacker::internal::main::factory
 
 if ! type -p http > /dev/null; then hacker::internal::http::install; fi
+if ! type -p googler > /dev/null; then hacker::internal::googler::install; fi
