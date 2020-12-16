@@ -3,15 +3,15 @@
 
 function hacker::pkg::database::factory {
     # shellcheck source=/dev/null
-    source "${ZSH_HACKER_SRC_PATH}"/pkg/database/base.zsh
+    source "${ZSH_HACKER_PATH}"/pkg/database/base.zsh
     case "${OSTYPE}" in
     darwin*)
         # shellcheck source=/dev/null
-        source "${ZSH_HACKER_SRC_PATH}"/pkg/database/osx.zsh
+        source "${ZSH_HACKER_PATH}"/pkg/database/osx.zsh
         ;;
     linux*)
         # shellcheck source=/dev/null
-        source "${ZSH_HACKER_SRC_PATH}"/pkg/database/linux.zsh
+        source "${ZSH_HACKER_PATH}"/pkg/database/linux.zsh
       ;;
     esac
 }
