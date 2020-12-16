@@ -7,7 +7,20 @@ LABEL NAME zsh-hacker-app-$stage
 ENV USERNAME developer
 
 ENV PACKAGES bash \
-  openssl
+  git \
+  gcc \
+  libc-dev \
+  make \
+  musl-dev \
+  openssl \
+  gcc \
+  libgdal20 \
+  libev-dev \
+  curl \
+  wget \
+  tar \
+  zsh \
+  jq
 
 ENV ZUNIT_VERSION "0.8.2"
 
