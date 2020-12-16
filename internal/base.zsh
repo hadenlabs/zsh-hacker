@@ -8,7 +8,7 @@ function hacker::internal::http::install {
         message_warning "${HACKER_MESSAGE_PYENV}"
         return
     fi
-    pip install --user httpie
+    python -m pip install --user --upgrade httpie
     message_success "Installed httpie"
 }
 
