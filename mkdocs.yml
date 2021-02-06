@@ -1,4 +1,4 @@
-site_name: zsh-goenv Documentation
+site_name: zsh-hacker Documentation
 theme: 'material'
 markdown_extensions:
   - toc:
@@ -15,8 +15,8 @@ extra:
   font:
     text: 'Source Sans Pro'
 
-repo_name: 'hadenlabs/zsh-goenv'
-repo_url: 'https://github.com/hadenlabs/zsh-goenv'
+repo_name: 'hadenlabs/zsh-hacker'
+repo_url: 'https://github.com/hadenlabs/zsh-hacker'
 copyright: 'Copyright © 2020 <a href="https://hadenlabs.com">hadenlabs</a>'
 
 google_analytics:
