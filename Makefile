@@ -1,5 +1,5 @@
 #
-# See ./CONTRIBUTING.rst
+# See ./docs/contributing.md
 #
 
 OS := $(shell uname)
@@ -18,31 +18,38 @@ else
 	PIPENV_INSTALL:=
 endif
 
-TEAM :=luismayta
+TEAM := hadenlabs
 REPOSITORY_DOMAIN:=github.com
 REPOSITORY_OWNER:=${TEAM}
 AWS_VAULT ?= ${TEAM}
 KEYBASE_OWNER ?= ${TEAM}
-KEYBASE_PATH_TEAM_NAME ?=private
+KEYBASE_PATH_TEAM_NAME ?=team
 PROJECT := zsh-hacker
 PROJECT_PORT := 3000
 
 PYTHON_VERSION=3.8.0
 NODE_VERSION=12.14.1
-TERRAFORM_VERSION=0.14.2
+TERRAFORM_VERSION=0.14.5
 PYENV_NAME="${PROJECT}"
 
 # Configuration.
 SHELL ?=/bin/bash
 ROOT_DIR=$(shell pwd)
 MESSAGE:=🍺️
-MESSAGE_HAPPY:="Done! ${MESSAGE}, Now Happy Hacking"
-SOURCE_DIR=$(ROOT_DIR)/
+MESSAGE_HAPPY?:="Done! ${MESSAGE}, Now Happy Hacking"
+SOURCE_DIR=$(ROOT_DIR)
 PROVISION_DIR:=$(ROOT_DIR)/provision
-FILE_README:=$(ROOT_DIR)/README.rst
+DOCS_DIR:=$(ROOT_DIR)/docs
+README_TEMPLATE:=$(PROVISION_DIR)/templates/README.md.gotmpl
 KEYBASE_VOLUME_PATH ?= /Keybase
 KEYBASE_TEAM_PATH ?=${KEYBASE_VOLUME_PATH}/${KEYBASE_PATH_TEAM_NAME}/${KEYBASE_OWNER}
 KEYBASE_PROJECT_PATH ?= ${KEYBASE_TEAM_PATH}/${REPOSITORY_DOMAIN}/${REPOSITORY_OWNER}/${PROJECT}
+
+export README_FILE ?= README.md
+export README_YAML ?= provision/generator/README.yaml
+export README_INCLUDES ?= $(file://$(shell pwd)/?type=text/plain)
+
+FILE_README:=$(ROOT_DIR)/README.md
 
 PATH_DOCKER_COMPOSE:=docker-compose.yml -f provision/docker-compose
 
@@ -65,6 +72,7 @@ help:
 	@echo ''
 	@echo 'Usage:'
 	@echo '    environment               create environment with pyenv'
+	@echo '    readme                    build README'
 	@echo '    setup                     install requirements'
 	@echo ''
 	@make docker.help
@@ -74,6 +82,11 @@ help:
 	@make utils.help
 	@make python.help
 	@make yarn.help
+
+## Create README.md by building it from README.yaml
+readme:
+	@gomplate --file $(README_TEMPLATE) \
+		--out $(README_FILE)
 
 setup:
 	@echo "=====> install packages..."
