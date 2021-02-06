@@ -1,0 +1,75 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: zsh-hacker
+
+company:
+  name: hadenlabs
+  description: |-
+    company labs
+  url: https://hadenlabs.com
+  github: https://github.com/hadenlabs
+  email: support@hadenlabs.com
+
+copyright:
+  name: Hadenlabs
+  url: https://hadenlabs.com
+
+email:
+  support: support@hadenlabs.com
+
+# Logo for this project
+#logo: docs/logo.png
+
+# License of this project
+license: "MIT"
+
+# Canonical GitHub repo
+github_repo: hadenlabs/zsh-hacker
+
+# Badges to display
+badges:
+  - name: "Build Status"
+    image: "https://travis-ci.org/hadenlabs/zsh-hacker.svg?branch=main"
+    url: "https://travis-ci.org/hadenlabs/zsh-hacker"
+  - name: "Issues"
+    image: "https://img.shields.io/github/issues/hadenlabs/zsh-hacker.svg"
+    url: "https://github.com/hadenlabs/zsh-hacker/issues"
+  - name: "Latest Release"
+    image: "https://img.shields.io/github/release/hadenlabs/zsh-hacker.svg"
+    url: "https://travis-ci.org/hadenlabs/zsh-hacker/releases"
+
+# Short description of this project
+description: |-
+  zsh-hacker plugin for zsh.
+
+requirements: |-
+
+  This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
+
+  ```{.sourceCode .bash}
+  https://github.com/luismayta/zsh-docker
+  https://github.com/luismayta/zsh-pyenv
+  https://github.com/luismayta/zsh-pipenv
+  https://github.com/luismayta/zsh-functions
+  ```
+
+installation:
+  - "docs/include/installation/oh-my-zsh.md"
+  - "docs/include/installation/antigen.md"
+  - "docs/include/installation/antibody.md"
+
+# How to use this project
+usage: |-
+  ```bash
+  make setup
+  ```
+
+# Contributors to this project
+contributors:
+  - name: "Luis Mayta"
+    github: "luismayta"

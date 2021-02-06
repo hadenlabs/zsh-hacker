@@ -1,1 +1,1 @@
-# Welcome to zsh-goenv documentation
+# Welcome to zsh-hacker documentation
