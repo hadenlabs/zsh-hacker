@@ -15,11 +15,11 @@ keybase:
 	make keybase.help
 
 keybase.environment:
-	@echo "=====> make environment for ${TEAM}..."
+	@echo "==> make environment for ${TEAM}..."
 	mkdir -p ${KEYBASE_PROJECT_PATH}/{staging,prod,dev,core}/{pem,private,password,pub,openssl}
 	@echo ${MESSAGE_HAPPY}
 
 keybase.setup:
-	@echo "=====> make dependences for ${TEAM}..."
+	@echo "==> make dependences for ${TEAM}..."
 	mkdir -p ${KEYBASE_PROJECT_PATH}/{staging,prod,dev,core}/{pem,private,password,pub,openssl}
 	@echo ${MESSAGE_HAPPY}
