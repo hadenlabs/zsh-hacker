@@ -6,3 +6,9 @@ function hydra {
         --volume "$(pwd)":/root/ --volume "$(pwd)":/data --volume /var/tmp:/tmp \
           booyaabes/kali-linux-full hydra "${@}"
 }
+
+function ncrack {
+    docker run --name ncrack --rm --net host --privileged \
+        --volume "$(pwd)":/root/ --volume "$(pwd)":/data --volume /var/tmp:/tmp \
+          booyaabes/kali-linux-full ncrack "${@}"
+}
