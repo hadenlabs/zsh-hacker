@@ -17,7 +17,7 @@ extra:
 
 repo_name: 'hadenlabs/zsh-hacker'
 repo_url: 'https://github.com/hadenlabs/zsh-hacker'
-copyright: 'Copyright © 2020 <a href="https://hadenlabs.com">hadenlabs</a>'
+copyright: 'Copyright © 2021 <a href="https://hadenlabs.com">hadenlabs</a>'
 
 google_analytics:
   - ''
