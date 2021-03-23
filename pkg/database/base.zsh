@@ -6,5 +6,5 @@ function sqlmap {
     mkdir -p ~/.sqlmap
     docker run --rm -it \
            --volume ~/.sqlmap:/root/.sqlmap --volume "$(pwd)":/data --volume /tmp:/tmp \
-           booyaabes/kali-linux-full sqlmap "${@}"
+           ${HACKER_KALI_DOCKER_IMAGE} sqlmap "${@}"
 }

@@ -2,11 +2,15 @@
 # -*- coding: utf-8 -*-
 
 function nmap {
-    docker run --rm --net host --privileged booyaabes/kali-linux-full nmap "${@}"
+    docker run --rm --net host --privileged ${HACKER_KALI_DOCKER_IMAGE} nmap "${@}"
 }
 
 function nikto {
-    docker run --rm --net host --privileged booyaabes/kali-linux-full nikto "${@}"
+    docker run --rm --net host --privileged ${HACKER_KALI_DOCKER_IMAGE} nikto "${@}"
+}
+
+function amap {
+    docker run -it --rm -w /data -v $(pwd):/data ${HACKER_KALI_DOCKER_IMAGE} amap "${@}"
 }
 
 function urlscan::validate {
@@ -39,4 +43,8 @@ function ipaddressreport {
 
     http GET https://www.virustotal.com/vtapi/v2/ip-address/report \
          apikey=="${VIRUSTOTAL_API_KEY}" ip=="${ipaddress}"
+}
+
+function wireshark {
+    docker run -it --rm -w /data -v $(pwd):/data -e DISPLAY -v $HOME/.Xauthority:/root/.Xauthority --net=host --privileged ${HACKER_KALI_DOCKER_IMAGE} wireshark "${@}"
 }
