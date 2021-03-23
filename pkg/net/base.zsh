@@ -5,6 +5,10 @@ function nmap {
     docker run --rm --net host --privileged booyaabes/kali-linux-full nmap "${@}"
 }
 
+function nikto {
+    docker run --rm --net host --privileged booyaabes/kali-linux-full nikto "${@}"
+}
+
 function urlscan::validate {
     if [ -z "${URLSCAN_API_KEY}" ]; then
         message_warning "URLSCAN_API_KEY is neccesary"
@@ -13,13 +17,6 @@ function urlscan::validate {
 }
 
 # urlscan
-function urlscan {
-    urlscan::validate
-    mkdir -p ~/.urlscan
-    docker run --rm -i \
-           -v ~/.urlscan:/root/.urlscan heywoodlh/urlscan-py:latest "${@}" --api "${URLSCAN_API_KEY}"
-}
-
 function urlscan {
     local url
     hacker::urls::validate
