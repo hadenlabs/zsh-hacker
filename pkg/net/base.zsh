@@ -5,6 +5,10 @@ function nmap {
     docker run --rm --net host --privileged "${HACKER_KALI_DOCKER_IMAGE}" nmap "${@}"
 }
 
+function telnet {
+    docker run --rm --net host --privileged "${HACKER_KALI_DOCKER_IMAGE}" telnet "${@}"
+}
+
 function nikto {
     docker run --rm --net host --privileged "${HACKER_KALI_DOCKER_IMAGE}" nikto "${@}"
 }
