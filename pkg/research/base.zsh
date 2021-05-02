@@ -120,6 +120,10 @@ function yersinia {
     docker run -it --rm -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" yersinia "${@}"
 }
 
+function shodan {
+    docker run -it --rm -w /data -v "$(pwd)":/data hadenlbas/shodan "${@}"
+}
+
 function zaproxy {
     docker run -it --rm -v ~/.ZAP:/root/.ZAP -e DISPLAY -v "${HOME}"/.Xauthority:/root/.Xauthority --net=host "${HACKER_KALI_DOCKER_IMAGE}" zaproxy "${@}"
 }
