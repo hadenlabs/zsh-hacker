@@ -28,7 +28,7 @@ PROJECT := zsh-hacker
 
 PYTHON_VERSION=3.8.0
 NODE_VERSION=14.15.5
-TERRAFORM_VERSION=0.14.5
+TERRAFORM_VERSION=0.15.1
 PYENV_NAME="${PROJECT}"
 GIT_IGNORES:=python,node,go,zsh
 GI:=gi
@@ -69,41 +69,44 @@ docker-test-run:=$(docker-test) run --rm ${DOCKER_SERVICE_TEST}
 docker-dev-run:=$(docker-dev) run --rm --service-ports ${DOCKER_SERVICE_DEV}
 docker-yarn-run:=$(docker-dev) run --rm --service-ports ${DOCKER_SERVICE_YARN}
 terragrunt:=terragrunt
+
 include provision/make/*.mk
 
+## Display help for all targets
+.PHONY: help
 help:
 	@echo '${MESSAGE} Makefile for ${PROJECT}'
 	@echo ''
-	@echo 'Usage:'
-	@echo '    environment               create environment with pyenv'
-	@echo '    setup                     install requirements'
-	@echo '    readme                    build README'
-	@echo ''
-	@make docker.help
-	@make docs.help
-	@make test.help
-	@make keybase.help
-	@make git.help
-	@make utils.help
-	@make python.help
-	@make yarn.help
+	@awk '/^.PHONY: / { \
+		msg = match(lastLine, /^## /); \
+			if (msg) { \
+				cmd = substr($$0, 9, 100); \
+				msg = substr(lastLine, 4, 1000); \
+				printf "  ${GREEN}%-30s${RESET} %s\n", cmd, msg; \
+			} \
+	} \
+	{ lastLine = $$0 }' $(MAKEFILE_LIST)
 
 ## Create README.md by building it from README.yaml
+.PHONY: readme
 readme:
 	@gomplate --file $(README_TEMPLATE) \
 		--out $(README_FILE)
 
+## setup dependences of project
+.PHONY: setup
 setup:
 	@echo "==> install packages..."
 	make python.setup
 	make python.precommit
-	@cp -rf provision/git/hooks/prepare-commit-msg .git/hooks/
 	@[ -e ".env" ] || cp -rf .env.example .env
 	make keybase.setup
 	make yarn.setup
 	make git.setup
 	@echo ${MESSAGE_HAPPY}
 
+## setup environment of project
+.PHONY: environment
 environment:
 	@echo "==> loading virtualenv ${PYENV_NAME}..."
 	make python.environment
