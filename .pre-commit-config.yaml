@@ -8,6 +8,7 @@ repos:
           (?x)^(
             .+\.vendor\/.*$|
             .+\.node_modules\/.*$|
+            .+\wordlist.txt$|
             .+\.lock$|
           )$
   - repo: https://github.com/pre-commit/pre-commit-hooks
