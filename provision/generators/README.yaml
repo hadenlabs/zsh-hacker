@@ -21,15 +21,12 @@ github_repo: hadenlabs/zsh-hacker
 
 # Badges to display
 badges:
-  - name: GitHub tag (latest SemVer)
-    image: https://img.shields.io/github/v/tag/hadenlabs/zsh-hacker?label=latest&sort=semver
-    url: https://github.com/hadenlabs/zsh-hacker/releases
-  - name: Latest Release
-    image: https://img.shields.io/github/release/hadenlabs/zsh-hacker
-    url: https://github.com/hadenlabs/zsh-hacker/releases
+  - name: GitHub release
+    image: https://img.shields.io/github/release/hadenlabs/zsh-hacker?style=flat-square
+    url: https://github.com/hadenlabs/zsh-hacker/releases/latest
   - name: Lint
     image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-hacker/lint-code
-    url: https://github.com/hadenlabs/zsh-hacker/actions
+    url: https://github.com/hadenlabs/zsh-hacker/actions?workflow=lint-code
   - name: Issues
     image: https://img.shields.io/github/issues/hadenlabs/zsh-hacker
     url: https://github.com/hadenlabs/zsh-hacker/issues
