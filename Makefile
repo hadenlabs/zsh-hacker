@@ -27,8 +27,8 @@ KEYBASE_PATH_TEAM_NAME ?=team
 PROJECT := zsh-hacker
 
 PYTHON_VERSION=3.8.0
-NODE_VERSION=14.15.5
-TERRAFORM_VERSION=0.15.1
+NODE_VERSION=14.16.1
+TERRAFORM_VERSION=0.15.4
 PYENV_NAME="${PROJECT}"
 GIT_IGNORES:=python,node,go,zsh
 GI:=gi
@@ -45,9 +45,6 @@ SOURCE_DIR=$(ROOT_DIR)
 PROVISION_DIR:=$(ROOT_DIR)/provision
 DOCS_DIR:=$(ROOT_DIR)/docs
 README_TEMPLATE:=$(PROVISION_DIR)/templates/README.tpl.md
-KEYBASE_VOLUME_PATH ?= /Keybase
-KEYBASE_TEAM_PATH ?=${KEYBASE_VOLUME_PATH}/${KEYBASE_PATH_TEAM_NAME}/${KEYBASE_OWNER}
-KEYBASE_PROJECT_PATH ?= ${KEYBASE_TEAM_PATH}/${REPOSITORY_DOMAIN}/${REPOSITORY_OWNER}/${PROJECT}
 
 export README_FILE ?= README.md
 export README_YAML ?= provision/generators/README.yaml
@@ -100,7 +97,6 @@ setup:
 	make python.setup
 	make python.precommit
 	@[ -e ".env" ] || cp -rf .env.example .env
-	make keybase.setup
 	make yarn.setup
 	make git.setup
 	@echo ${MESSAGE_HAPPY}
@@ -110,5 +106,4 @@ setup:
 environment:
 	@echo "==> loading virtualenv ${PYENV_NAME}..."
 	make python.environment
-	make keybase.environment
 	@echo ${MESSAGE_HAPPY}
