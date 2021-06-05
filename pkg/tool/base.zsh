@@ -4,14 +4,14 @@
 
 function wpvulndb::validate {
     if [ -z "${WPVULNDB_API_TOKEN}" ]; then
-        message_warning "WPVULNDB_API_TOKEN is neccesary"
+        message_warning "WPVULNDB_API_TOKEN is necessary"
         return 0
     fi
 }
 
 function file::validate {
     if [ -z "${VIRUSTOTAL_API_KEY}" ]; then
-        message_warning "VIRUSTOTAL_API_KEY is neccesary"
+        message_warning "VIRUSTOTAL_API_KEY is necessary"
         return 0
     fi
 }
@@ -53,7 +53,7 @@ function exiftool {
 
 function urls::validate {
     if [ -z "${VIRUSTOTAL_API_KEY}" ]; then
-        message_warning "VIRUSTOTAL_API_KEY is neccesary"
+        message_warning "VIRUSTOTAL_API_KEY is necessary"
         return 0
     fi
 }
