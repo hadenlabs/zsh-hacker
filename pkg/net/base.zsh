@@ -19,7 +19,7 @@ function amap {
 
 function urlscan::validate {
     if [ -z "${URLSCAN_API_KEY}" ]; then
-        message_warning "URLSCAN_API_KEY is neccesary"
+        message_warning "URLSCAN_API_KEY is necessary"
         return 0
     fi
 }
@@ -35,7 +35,7 @@ function urlscan {
 
 function ip::validate {
     if [ -z "${VIRUSTOTAL_API_KEY}" ]; then
-        message_warning "VIRUSTOTAL_API_KEY is neccesary"
+        message_warning "VIRUSTOTAL_API_KEY is necessary"
         return 0
     fi
 }
