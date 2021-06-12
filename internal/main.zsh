@@ -19,4 +19,5 @@ function hacker::internal::main::factory {
 hacker::internal::main::factory
 
 if ! type -p http > /dev/null; then hacker::internal::http::install; fi
-if ! type -p googler > /dev/null; then hacker::internal::googler::install; fi
+if ! core::exists googler > /dev/null; then core::install googler; fi
+if ! core::exists ngrok > /dev/null; then core::install ngrok; fi
