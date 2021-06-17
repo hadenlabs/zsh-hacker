@@ -21,9 +21,9 @@ github_repo: hadenlabs/zsh-hacker
 
 # Badges to display
 badges:
-  - name: GitHub release
-    image: https://img.shields.io/github/release/hadenlabs/zsh-hacker?style=flat-square
-    url: https://github.com/hadenlabs/zsh-hacker/releases/latest
+  - name: Latest Release
+    image: https://img.shields.io/github/release/hadenlabs/zsh-hacker
+    url: https://github.com/hadenlabs/zsh-hacker/releases
   - name: Lint
     image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-hacker/lint-code
     url: https://github.com/hadenlabs/zsh-hacker/actions?workflow=lint-code
@@ -46,8 +46,6 @@ requirements: |-
   This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
   * [zsh-core](https://github.com/hadenlabs/zsh-core)
-
-usage: |
 
 installation:
   - 'docs/include/installation/oh-my-zsh.md'
