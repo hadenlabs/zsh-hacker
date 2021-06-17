@@ -17,8 +17,7 @@ function file::validate {
 }
 
 function wpscan {
-    hacker::wpvulndb::validate
-    docker run --rm -i wpscanteam/wpscan --url "${@}" --api-token "${WPVULNDB_API_TOKEN}"
+    docker run --rm -i wpscanteam/wpscan "${@}" --api-token "${WPVULNDB_API_TOKEN}"
 }
 
 function filereport {
