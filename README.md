@@ -12,7 +12,7 @@
 
   -->
 
-[![GitHub release](https://img.shields.io/github/release/hadenlabs/zsh-hacker?style=flat-square)](https://github.com/hadenlabs/zsh-hacker/releases/latest) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/zsh-hacker/lint-code)](https://github.com/hadenlabs/zsh-hacker/actions?workflow=lint-code) [![Issues](https://img.shields.io/github/issues/hadenlabs/zsh-hacker)](https://github.com/hadenlabs/zsh-hacker/issues) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com)
+[![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-hacker)](https://github.com/hadenlabs/zsh-hacker/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/zsh-hacker/lint-code)](https://github.com/hadenlabs/zsh-hacker/actions?workflow=lint-code) [![Issues](https://img.shields.io/github/issues/hadenlabs/zsh-hacker)](https://github.com/hadenlabs/zsh-hacker/issues) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com)
 
 # zsh-hacker
 
@@ -57,8 +57,6 @@ to your `.zshrc` where you're adding your other plugins.
 
 2.  Either open a new terminal to force zsh to load the new plugin, or run `antibody bundle hadenlabs/zsh-hacker` in a running zsh session.
 3.  Enjoy!
-
-## Usage
 
 ## Functions
 
