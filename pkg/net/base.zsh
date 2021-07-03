@@ -5,6 +5,10 @@ function nmap {
     docker run --rm --net host --privileged "${HACKER_KALI_DOCKER_IMAGE}" nmap "${@}"
 }
 
+function rustscan {
+    docker run --rm --name rustscan --net host --privileged rustscan/rustscan "${@}"
+}
+
 function telnet {
     docker run --rm --net host --privileged "${HACKER_KALI_DOCKER_IMAGE}" telnet "${@}"
 }
