@@ -22,13 +22,10 @@ TEAM := hadenlabs
 REPOSITORY_DOMAIN:=github.com
 REPOSITORY_OWNER:=${TEAM}
 AWS_VAULT ?= ${TEAM}
-KEYBASE_OWNER ?= ${TEAM}
-KEYBASE_PATH_TEAM_NAME ?=team
 PROJECT := zsh-hacker
 
 PYTHON_VERSION=3.8.0
 NODE_VERSION=14.16.1
-TERRAFORM_VERSION=0.15.4
 PYENV_NAME="${PROJECT}"
 GIT_IGNORES:=python,node,go,zsh
 GI:=gi
@@ -97,7 +94,6 @@ setup:
 	make python.setup
 	make python.precommit
 	@[ -e ".env" ] || cp -rf .env.example .env
-	make yarn.setup
 	make git.setup
 	@echo ${MESSAGE_HAPPY}
 
