@@ -21,6 +21,10 @@ function amap {
     docker run -it --rm -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" amap "${@}"
 }
 
+function sslscan {
+    docker run --rm --net host --privileged "${HACKER_KALI_DOCKER_IMAGE}" sslscan "${@}"
+}
+
 function urlscan::validate {
     if [ -z "${URLSCAN_API_KEY}" ]; then
         message_warning "URLSCAN_API_KEY is necessary"
