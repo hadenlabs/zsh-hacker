@@ -25,7 +25,6 @@ AWS_VAULT ?= ${TEAM}
 PROJECT := zsh-hacker
 
 PYTHON_VERSION=3.8.0
-NODE_VERSION=14.16.1
 PYENV_NAME="${PROJECT}"
 GIT_IGNORES:=python,node,go,zsh
 GI:=gi
