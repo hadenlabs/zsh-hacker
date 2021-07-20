@@ -76,6 +76,10 @@ function ndiff {
     docker run -it --rm -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" ndiff "${@}"
 }
 
+function dirsearch {
+    docker run --rm -v "$(pwd)":/data hadenlabs/dirsearch "${@}"
+}
+
 function netdiscover {
     docker run -it --rm --net=host -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" netdiscover "${@}"
 }
