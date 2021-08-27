@@ -5,16 +5,7 @@
       "pattern": "^https://hadenlabs.com"
     },
     {
-      "pattern": "^https://github.com/hadenlabs/zsh-hacker/releases.*$"
-    },
-    {
-      "pattern": "^https://github.com/hadenlabs/zsh-hacker/pulls.*$"
-    },
-    {
-      "pattern": "^https://github.com/hadenlabs/zsh-hacker/actions.*$"
-    },
-    {
-      "pattern": "^https://github.com/hadenlabs/zsh-hacker/issues.*$"
+      "pattern": "^https://github.com/hadenlabs/zsh-hacker/compare"
     }
   ],
   "replacementPatterns": [
