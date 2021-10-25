@@ -1,5 +1,10 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
+#
+## hacker::docker::run - run container docker
+function hacker::docker::run {
+    docker run --rm --platform linux/amd64 "${@}"
+}
 
 # http::install - install http
 function hacker::internal::http::install {
