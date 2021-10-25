@@ -4,7 +4,7 @@
 function sherlock {
     local username
     username="${1}"
-    docker run theyahya/sherlock "${username}" | fzf
+    hacker::docker::run theyahya/sherlock "${username}" | fzf
 }
 
 function googler::list {
@@ -21,113 +21,113 @@ function googler::list {
 }
 
 function dnschef {
-    docker run -it --rm -w /data -v "$(pwd)":/data --net=host "${HACKER_KALI_DOCKER_IMAGE}" dnschef "${@}"
+    hacker::docker::run -it -w /data -v "$(pwd)":/data --net=host "${HACKER_KALI_DOCKER_IMAGE}" dnschef "${@}"
 }
 
 function dnsenum {
-    docker run -it --rm -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" dnsenum "${@}"
+    hacker::docker::run -it -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" dnsenum "${@}"
 }
 
 function dnsmap {
-    docker run -it --rm -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" dnsmap "${@}"
+    hacker::docker::run -it -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" dnsmap "${@}"
 }
 
 function dnsrecon {
-    docker run -it --rm -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" dnsrecon "${@}"
+    hacker::docker::run -it -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" dnsrecon "${@}"
 }
 
 function dnswalk {
-    docker run -it --rm "${HACKER_KALI_DOCKER_IMAGE}" dnswalk "${@}"
+    hacker::docker::run -it "${HACKER_KALI_DOCKER_IMAGE}" dnswalk "${@}"
 }
 
 function searchsploit {
-    docker run --rm "${HACKER_KALI_DOCKER_IMAGE}" searchsploit "${@}"
+    hacker::docker::run "${HACKER_KALI_DOCKER_IMAGE}" searchsploit "${@}"
 }
 
 function burpsuite {
-    docker run -it --rm -e DISPLAY -v "${HOME}"/.Xauthority:/root/.Xauthority --net=host "${HACKER_KALI_DOCKER_IMAGE}" java -jar /usr/bin/burpsuite "${@}"
+    hacker::docker::run -it -e DISPLAY -v "${HOME}"/.Xauthority:/root/.Xauthority --net=host "${HACKER_KALI_DOCKER_IMAGE}" java -jar /usr/bin/burpsuite "${@}"
 }
 
 function commix {
-    docker run -it --rm -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" commix "${@}"
+    hacker::docker::run -it -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" commix "${@}"
 }
 
 function dirb {
-    docker run -it --rm -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" dirb "${@}"
+    hacker::docker::run -it -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" dirb "${@}"
 }
 
 function hping3 {
-    docker run -it --rm -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" hping3 "${@}"
+    hacker::docker::run -it -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" hping3 "${@}"
 }
 
 function kali-sh {
-    docker run -it --rm --net=host --privileged -e DISPLAY -v "${HOME}"/.Xauthority:/root/.Xauthority "${HACKER_KALI_DOCKER_IMAGE}" /bin/bash "${@}"
+    hacker::docker::run -it --net=host --privileged -e DISPLAY -v "${HOME}"/.Xauthority:/root/.Xauthority "${HACKER_KALI_DOCKER_IMAGE}" /bin/bash "${@}"
 }
 
 function msfconsole {
-    docker run -it --rm --net=host  -v ~/.msf4:/root/.msf4 -v /tmp/msf:/tmp/data "${HACKER_KALI_DOCKER_IMAGE}" msfconsole "${@}"
+    hacker::docker::run -it --net=host  -v ~/.msf4:/root/.msf4 -v /tmp/msf:/tmp/data "${HACKER_KALI_DOCKER_IMAGE}" msfconsole "${@}"
 }
 
 function msfvenom {
-    docker run -it --rm -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" msfvenom "${@}"
+    hacker::docker::run -it -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" msfvenom "${@}"
 }
 
 function ndiff {
-    docker run -it --rm -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" ndiff "${@}"
+    hacker::docker::run -it -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" ndiff "${@}"
 }
 
 function dirsearch {
-    docker run --rm -v "$(pwd)":/data hadenlabs/dirsearch "${@}"
+    hacker::docker::run -v "$(pwd)":/data hadenlabs/dirsearch "${@}"
 }
 
 function netdiscover {
-    docker run -it --rm --net=host -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" netdiscover "${@}"
+    hacker::docker::run -it --net=host -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" netdiscover "${@}"
 }
 
 function padbuster {
-    docker run -it --rm "${HACKER_KALI_DOCKER_IMAGE}" padbuster "${@}"
+    hacker::docker::run -it "${HACKER_KALI_DOCKER_IMAGE}" padbuster "${@}"
 }
 
 function reaver {
-    docker run -it --rm --net=host --privileged -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" reaver "${@}"
+    hacker::docker::run -it --net=host --privileged -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" reaver "${@}"
 }
 
 function responder {
-    docker run -it --rm --net=host "${HACKER_KALI_DOCKER_IMAGE}" responder "${@}"
+    hacker::docker::run -it --net=host "${HACKER_KALI_DOCKER_IMAGE}" responder "${@}"
 }
 
 function socat {
-    docker run --rm -w /data -v "$(pwd)":/data --net=host "${HACKER_KALI_DOCKER_IMAGE}" socat "${@}"
+    hacker::docker::run -w /data -v "$(pwd)":/data --net=host "${HACKER_KALI_DOCKER_IMAGE}" socat "${@}"
 }
 
 function tshark {
-    docker run --rm -w /data -v "$(pwd)":/data --net=host --privileged "${HACKER_KALI_DOCKER_IMAGE}" tshark "${@}"
+    hacker::docker::run -w /data -v "$(pwd)":/data --net=host --privileged "${HACKER_KALI_DOCKER_IMAGE}" tshark "${@}"
 }
 
 function volafox {
-    docker run -it --rm -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" volafox "${@}"
+    hacker::docker::run -it -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" volafox "${@}"
 }
 
 function volatility {
-    docker run -it --rm -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" volatility "${@}"
+    hacker::docker::run -it -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" volatility "${@}"
 }
 
 function wash {
-    docker run -it --rm -w /data -v "$(pwd)":/data --net=host --privileged "${HACKER_KALI_DOCKER_IMAGE}" wash "${@}"
+    hacker::docker::run -it -w /data -v "$(pwd)":/data --net=host --privileged "${HACKER_KALI_DOCKER_IMAGE}" wash "${@}"
 }
 
 function webscarab {
-    docker run -it --rm -w /data -v "$(pwd)":/data -e DISPLAY -v "${HOME}"/.Xauthority:/root/.Xauthority --net=host "${HACKER_KALI_DOCKER_IMAGE}" java -jar /usr/bin/webscarab "${@}"
+    hacker::docker::run -it -w /data -v "$(pwd)":/data -e DISPLAY -v "${HOME}"/.Xauthority:/root/.Xauthority --net=host "${HACKER_KALI_DOCKER_IMAGE}" java -jar /usr/bin/webscarab "${@}"
 }
 
 function yersinia {
-    docker run -it --rm -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" yersinia "${@}"
+    hacker::docker::run -it -w /data -v "$(pwd)":/data "${HACKER_KALI_DOCKER_IMAGE}" yersinia "${@}"
 }
 
 function shodan {
-    docker run -it --rm -w /data -v "$(pwd)":/data hadenlbas/shodan "${@}"
+    hacker::docker::run -it -w /data -v "$(pwd)":/data hadenlbas/shodan "${@}"
 }
 
 function zaproxy {
-    docker run -it --rm -v ~/.ZAP:/root/.ZAP -e DISPLAY -v "${HOME}"/.Xauthority:/root/.Xauthority --net=host "${HACKER_KALI_DOCKER_IMAGE}" zaproxy "${@}"
+    hacker::docker::run -it -v ~/.ZAP:/root/.ZAP -e DISPLAY -v "${HOME}"/.Xauthority:/root/.Xauthority --net=host "${HACKER_KALI_DOCKER_IMAGE}" zaproxy "${@}"
 }
