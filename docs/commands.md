@@ -1,9 +1,11 @@
 <!-- Space: ZshHacker -->
 <!-- Parent: Project -->
-<!-- Title: Support -->
+<!-- Title: Commands -->
 
-<!-- Label: Support and Contact -->
+<!-- Label: ZshHacker -->
+<!-- Label: Project -->
+<!-- Label: Commands -->
 <!-- Include: docs/disclaimer.md -->
 <!-- Include: ac:toc -->
 
-# Support & Contact
+## Commands
