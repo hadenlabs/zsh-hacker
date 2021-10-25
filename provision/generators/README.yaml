@@ -10,6 +10,10 @@ name: zsh-hacker
 email:
   support: support@hadenlabs.com
 
+confluence:
+  space: ZshHacker
+  title: Project
+
 # Logo for this project
 #logo: docs/logo.png
 
@@ -37,15 +41,17 @@ badges:
     image: https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735
     url: https://keepachangelog.com
 
-# Short description of this project
-description: |-
-  zsh-hacker plugin for zsh.
-
 requirements: |-
 
   This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
-  * [zsh-core](https://github.com/hadenlabs/zsh-core)
+  - [zsh-core](https://github.com/hadenlabs/zsh-core)
+  - [python](https://www.python.org)
+  - [taskfile](https://github.com/go-task/task)
+
+# Short description of this project
+description: |-
+  zsh-hacker plugin for zsh.
 
 installation:
   - 'docs/include/installation/oh-my-zsh.md'
