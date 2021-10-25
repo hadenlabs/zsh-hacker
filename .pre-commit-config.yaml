@@ -48,7 +48,7 @@ repos:
       - id: fix-encoding-pragma
       - id: sort-simple-yaml
   - repo: https://github.com/hadenlabs/pre-commit-hooks
-    rev: 6c173538c37aa802949cae5ff487d702319ba80a
+    rev: af78fbc1bb1026afb91644ae2e278dae055644ff
     hooks:
       - id: do-not-commit
       - id: markdown-link-check
@@ -71,10 +71,4 @@ repos:
           - --verbose
       - id: hadolint
         args:
-          - --ignore=SC2001
-          - --ignore=SC2086
-          - --ignore=SC2102
-          - --ignore=DL3008
-          - --ignore=DL3013
-          - --ignore=DL3018
-          - --ignore=DL4006
+          - --config=.github/linters/.hadolint.yaml

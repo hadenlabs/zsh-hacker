@@ -154,7 +154,7 @@ title = "gitleaks config"
 
 [[rules]]
     description = "Env Var"
-    regex = '''(?i)(apikey|secret|key|api|password|pass|pw|host)=[0-9a-zA-Z-_.{}]{4,120}'''
+    regex = '''(?i)(apikey|secret|key|api|password|pass)=[0-9a-zA-Z-_.{}]{4,120}'''
     tags = ["env"]
     [rules.allowlist]
         description = "ignore value fake"
@@ -231,24 +231,38 @@ title = "gitleaks config"
 # Global allowlist
 [allowlist]
   description = "Whitelisted files"
-    files = [
-      '''(.*?)(jpg|gif|png|doc|pdf|bin|mp3|mp4|mov|ttf|woff|woff2|eot|lock)$''',
-      '''^\.gitignore$''',
-      '''^\.gitleaks.toml$''',
-      '''^yarn.lock$''',
-      '''^vendor/(.*?)$''',
-      '''^node_modules/(.*?)$''',
-    ]
-    commits = [
-      '''b1c66138b05174c1fa03da270fc09746bb92ea43''',
-      '''f3e1bddc9ede37f265a334eecc1dbc6dd1e98fd0''',
-    ]
+  paths = [
+    '''^vendor/''',
+    '''^bower_components/''',
+    '''^public/js/bower_components/''',
+    '''^node_modules/''',
+    '''^theme/''',
+  ]
+  files = [
+    '''(.*?)(jpg|gif|png|doc|pdf|bin|mp3|mp4|mov|ttf|woff|woff2|eot|lock)$''',
+    '''^\.gitignore$''',
+    '''^\.gitleaks.toml$''',
+    '''^yarn.lock$''',
+    '''^vendor/(.*?)$''',
+    '''^sonar-project.properties$''',
+    '''^node_modules/(.*?)$''',
+  ]
+  commits = [
+    '''b1c66138b05174c1fa03da270fc09746bb92ea43''',
+    '''f3e1bddc9ede37f265a334eecc1dbc6dd1e98fd0''',
+  ]
 
 [whitelist]
   description = "image and html allowlists"
-	files = [
+  files = [
     '''(.*?)(jpg|gif|png|doc|pdf|bin|mp3|mp4|mov|ttf|woff|woff2|eot|lock)$''',
+    '''^\.gitignore$''',
     '''^\.gitleaks.toml$''',
     '''^\.gitignore$''',
     '''^yarn.lock$''',
+    '''^sonar-project.properties$''',
+  ]
+  paths = [
+    '''^vendor/(.*?)$''',
+    '''^node_modules/(.*?)$''',
   ]
