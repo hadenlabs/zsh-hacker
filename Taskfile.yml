@@ -2,6 +2,7 @@ version: '3'
 
 includes:
   changelog: ./provision/task/changelog.yml
+  confluence: ./provision/task/confluence.yml
   python: ./provision/task/python.yml
   git: ./provision/task/git.yml
   docs: ./provision/task/docs.yml
@@ -100,6 +101,8 @@ tasks:
   setup:
     desc: Setup dependences of project
     cmds:
+      - >-
+        [ -e ".env" ] || cp -rf .env.example .env
       - task: python:setup
       - task: python:precommit
       - task: git:setup
