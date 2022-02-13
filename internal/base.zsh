@@ -3,7 +3,7 @@
 #
 ## hacker::docker::run - run container docker
 function hacker::docker::run {
-    docker run --rm --platform linux/amd64 "${@}"
+    docker run --rm "${@}"
 }
 
 # http::install - install http
