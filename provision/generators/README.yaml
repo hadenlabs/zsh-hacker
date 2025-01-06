@@ -31,6 +31,12 @@ badges:
   - name: Lint
     image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-hacker/lint-code
     url: https://github.com/hadenlabs/zsh-hacker/actions?workflow=lint-code
+  - name: CI
+    image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-hacker/ci
+    url: https://github.com/hadenlabs/zsh-hacker/actions?workflow=ci
+  - name: Test
+    image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-hacker/test
+    url: https://github.com/hadenlabs/zsh-hacker/actions?workflow=test
   - name: pre-commit
     image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
     url: https://github.com/pre-commit/pre-commit
@@ -58,5 +64,11 @@ installation:
   - 'docs/include/installation/antigen.md'
   - 'docs/include/installation/antibody.md'
 
+usages:
+  - docs/usage.md
+
 include:
-  - 'docs/functions.md'
+  - "docs/functions.md"
+
+examples:
+  - "docs/examples/common.md"

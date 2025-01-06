@@ -1,19 +1,30 @@
-version: '3'
+version: "3"
 
 includes:
-  changelog: ./provision/task/changelog.yml
-  confluence: ./provision/task/confluence.yml
-  python: ./provision/task/python.yml
-  git: ./provision/task/git.yml
-  docs: ./provision/task/docs.yml
-  docker: ./provision/task/docker.yml
-  plantuml: ./provision/task/plantuml.yml
-  gitflow: ./provision/task/gitflow.yml
-  version: ./provision/task/version.yml
-  mark: ./provision/task/mark.yml
-  prettier: ./provision/task/prettier.yml
-  sonar: ./provision/task/sonar.yml
-  diagrams: ./provision/diagrams/Taskfile.yml
+  pre-commit:
+    taskfile: "https://raw.githubusercontent.com/hadenlabs/tasks/main/pre-commit/Taskfile.yml"
+  github:
+    taskfile: "https://raw.githubusercontent.com/hadenlabs/tasks/main/github/Taskfile.yml"
+  changelog:
+    taskfile: "https://raw.githubusercontent.com/hadenlabs/tasks/main/changelog/Taskfile.yml"
+  confluence:
+    taskfile: "https://raw.githubusercontent.com/hadenlabs/tasks/main/confluence/Taskfile.yml"
+  python:
+    taskfile: "https://raw.githubusercontent.com/hadenlabs/tasks/main/python/Taskfile.yml"
+  git:
+    taskfile: "https://raw.githubusercontent.com/hadenlabs/tasks/main/git/Taskfile.yml"
+  docs:
+    taskfile: "provision/task/docs.yml"
+  docker:
+    taskfile: "https://raw.githubusercontent.com/hadenlabs/tasks/main/docker/Taskfile.yml"
+  version:
+    taskfile: "https://raw.githubusercontent.com/hadenlabs/tasks/main/version/Taskfile.yml"
+  plantuml:
+    taskfile: "https://raw.githubusercontent.com/hadenlabs/tasks/main/plantuml/Taskfile.yml"
+  prettier:
+    taskfile: "https://raw.githubusercontent.com/hadenlabs/tasks/main/prettier/Taskfile.yml"
+  sonar:
+    taskfile: "https://raw.githubusercontent.com/hadenlabs/tasks/main/sonar/Taskfile.yml"
 
 env:
   DOCKER:
@@ -36,19 +47,26 @@ dotenv:
 vars:
   PROJECT_NAME: zsh-hacker
   ORGANIZATION: hadenlabs
+  DOCKER_PLATFORM: linux/amd64
   REVIEWERS: luismayta
-  PYTHON_VERSION: 3.9.2
-  NODE_VERSION: 16.6.1
-  GIT_IGNORES: python,node,go,zsh,sonar
+  PYTHON_VERSION: 3.11.5
+  NODE_VERSION: 18.18.2
+  TERRAFORM_VERSION: 1.10.2
+  GIT_IGNORES: python,node,go,zsh,sonar,java,maven,intellij+all,terraform,linux
   GOLANGCI_VERSION: 1.42.0
   README_FILE: README.md
-  GIT_IGNORES_CUSTOM: >-
+  GIT_IGNORES_CUSTOM: |
     bin
     .scannerwork
     .secrets
+    public
     TMP_CHANGELOG.md
     .task
+    .terraform.lock.hcl
     *.lock.hcl
+    *.zip
+    .external_modules
+    vendor
 
 tasks:
   default:
@@ -77,9 +95,7 @@ tasks:
       - python:check
       - changelog:check
       - git:check
-      - gitflow:check
       - docs:check
-      - sonar:check
 
   readme:
     run: once
@@ -91,12 +107,20 @@ tasks:
         --out {{.README_FILE}}
         --datasource config={{.README_YAML}}
         --datasource includes={{.README_INCLUDES}}
+      - task: prettier
 
   prettier:
     run: once
     desc: Execute prettier files
     cmds:
       - task: prettier:all
+
+  upgrade:
+    run: once
+    desc: Execute upgrade packages
+    cmds:
+      - poetry update
+      - poetry run pre-commit autoupdate
 
   setup:
     desc: Setup dependences of project
@@ -106,7 +130,6 @@ tasks:
       - task: python:setup
       - task: python:precommit
       - task: git:setup
-      - task: gitflow:setup
 
   environment:
     desc: Setup environment of project

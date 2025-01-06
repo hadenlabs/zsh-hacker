@@ -14,6 +14,8 @@ function hacker::internal::main::factory {
         source "${ZSH_HACKER_PATH}"/internal/linux.zsh
       ;;
     esac
+    # shellcheck source=/dev/null
+    source "${ZSH_HACKER_PATH}"/internal/helper.zsh
 }
 
 hacker::internal::main::factory
