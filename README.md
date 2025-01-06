@@ -15,7 +15,7 @@
 
   -->
 
-[![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-hacker)](https://github.com/hadenlabs/zsh-hacker/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/zsh-hacker/lint-code)](https://github.com/hadenlabs/zsh-hacker/actions?workflow=lint-code) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog%20v1.0.0-orange)](https://keepachangelog.com)
+[![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-hacker)](https://github.com/hadenlabs/zsh-hacker/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/zsh-hacker/lint-code)](https://github.com/hadenlabs/zsh-hacker/actions?workflow=lint-code) [![CI](https://img.shields.io/github/workflow/status/hadenlabs/zsh-hacker/ci)](https://github.com/hadenlabs/zsh-hacker/actions?workflow=ci) [![Test](https://img.shields.io/github/workflow/status/hadenlabs/zsh-hacker/test)](https://github.com/hadenlabs/zsh-hacker/actions?workflow=test) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog%20v1.0.0-orange)](https://keepachangelog.com)
 
 # zsh-hacker
 
@@ -31,14 +31,33 @@ This is a list of plugins that need to be installed previously to enjoy all the 
 
 ## Installation
 
-### [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) users
+<!-- Space: Projects -->
+<!-- Parent: ZshHacker -->
+<!-- Title: Installation Oh-My-Zsh ZshHacker -->
+<!-- Label: ZshHacker -->
+<!-- Label: Project -->
+<!-- Label: Installation -->
+<!-- Label: Oh-My-Zsh -->
+<!-- Include: docs/disclaimer.md -->
+<!-- Include: ac:toc -->
 
-If you're using [oh-my-zsh](https://gitub.com/robbyrussell/oh-my-zsh), install this plugin by doing the following:
+### [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) users
+
+If you're using [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh), install this plugin by doing the following:
 
 1.  Go to your oh-my-zsh custom plugins directory -`cd ~/.oh-my-zsh/custom/plugins`
 2.  Clone the plugin `bash git clone https://github.com/hadenlabs/zsh-hacker`bash
 3.  Edit your `.zshrc` and add `plugins=( ... zsh-hacker )` to your list of plugins
 4.  Open a new terminal and enjoy!
+    <!-- Space: Projects -->
+    <!-- Parent: ZshHacker -->
+    <!-- Title: Installation Antigen ZshHacker -->
+    <!-- Label: ZshHacker -->
+    <!-- Label: Project -->
+    <!-- Label: Installation -->
+    <!-- Label: Antigen -->
+    <!-- Include: docs/disclaimer.md -->
+    <!-- Include: ac:toc -->
 
 ### [antigen](https://github.com/zsh-users/antigen) users
 
@@ -47,21 +66,55 @@ If you're using [Antigen](https://github.com/zsh-users/antigen), install this pl
 1.  Add `antigen bundle hadenlabs/zsh-hacker` to your `.zshrc` where you're adding your other plugins.
 2.  Either open a new terminal to force zsh to load the new plugin, or run `antigen bundle hadenlabs/zsh-hacker` in a running zsh session.
 3.  Enjoy!
+    <!-- Space: Projects -->
+    <!-- Parent: ZshHacker -->
+    <!-- Title: Installation Antibody ZshHacker -->
+    <!-- Label: ZshHacker -->
+    <!-- Label: Project -->
+    <!-- Label: Installation -->
+    <!-- Include: docs/disclaimer.md -->
+    <!-- Include: ac:toc -->
 
 ### [antibody](https://github.com/getantibody/antibody) users
 
 If you're using [Antibody](https://github.com/getantibody/antibody), install this plugin by doing the following:
 
-1.  Add :
+1. Add :
 
 ```{.sourceCode .bash}
-     antibody bundle hadenlabs/zsh-hacker
+antibody bundle hadenlabs/zsh-hacker
 ```
 
 to your `.zshrc` where you're adding your other plugins.
 
 2.  Either open a new terminal to force zsh to load the new plugin, or run `antibody bundle hadenlabs/zsh-hacker` in a running zsh session.
 3.  Enjoy!
+
+## Usage
+
+# How to use this project
+
+```bash
+task setup
+```
+
+## Examples
+
+<!-- Space: Projects -->
+<!-- Parent: ZshHacker -->
+<!-- Title: Examples ZshHacker -->
+<!-- Label: Examples -->
+<!-- Include: ./../disclaimer.md -->
+<!-- Include: ac:toc -->
+
+### Common
+
+ <!-- Space: Projects -->
+<!-- Parent: ZshHacker -->
+<!-- Title: Functions ZshHacker -->
+<!-- Label: Functions -->
+<!-- Include: docs/disclaimer.md -->
+<!-- Include: ac:toc -->
 
 ## Functions
 
@@ -92,7 +145,7 @@ Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following co
 
 ## Copyright
 
-Copyright © 2018-2022 [Hadenlabs](https://hadenlabs.com)
+Copyright © 2018-2025 [Hadenlabs](https://hadenlabs.com)
 
 ## Trademarks
 
