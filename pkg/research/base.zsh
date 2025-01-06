@@ -83,10 +83,6 @@ function responder {
     hacker::docker::run -it --net=host "${HACKER_KALI_DOCKER_IMAGE}" responder "${@}"
 }
 
-function socat {
-    hacker::docker::run -w /data -v "$(pwd)":/data --net=host "${HACKER_KALI_DOCKER_IMAGE}" socat "${@}"
-}
-
 function tshark {
     hacker::docker::run -w /data -v "$(pwd)":/data --net=host --privileged "${HACKER_KALI_DOCKER_IMAGE}" tshark "${@}"
 }
