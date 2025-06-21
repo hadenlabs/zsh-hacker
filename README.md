@@ -107,7 +107,13 @@ task setup
 <!-- Include: ./../disclaimer.md -->
 <!-- Include: ac:toc -->
 
-### Common
+## Common
+
+### Install Dependencies
+
+```bash
+task setup
+```
 
  <!-- Space: Projects -->
 <!-- Parent: ZshHacker -->
@@ -120,7 +126,7 @@ task setup
 
 ## Help
 
-**Got a question?**
+### Got a question?
 
 File a GitHub [issue](https://github.com/hadenlabs/zsh-hacker/issues).
 
