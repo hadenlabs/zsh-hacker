@@ -1,7 +1,6 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 
-
 function wpvulndb::validate {
     if [ -z "${WPVULNDB_API_TOKEN}" ]; then
         message_warning "WPVULNDB_API_TOKEN is necessary"
