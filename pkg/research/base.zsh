@@ -7,6 +7,18 @@ function sherlock {
     hacker::docker::run theyahya/sherlock "${username}" | fzf
 }
 
+function amass {
+  docker run --rm -v "$(pwd)":/data \
+    --network host \
+    caffix/amass "${@}"
+}
+
+function gobuster {
+  docker run --rm -v "$(pwd)":/data \
+    --network host \
+    oj/gobuster "${@}"
+}
+
 function dnschef {
     hacker::docker::run -it -w /data -v "$(pwd)":/data --net=host "${HACKER_KALI_DOCKER_IMAGE}" dnschef "${@}"
 }
